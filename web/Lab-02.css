@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 62.5%;
+  }
+  body {
+    font-size: 1.6rem;
+    font-family: "Sora", sans-serif;
+  }
+  :root {
+    --font-heading: "Sora";
+    --font-content: "Open Sans";
+    --primary-color: #21a9de;
+    --header-bg: #106;
+    --partners-bg: #f6fbff;
+  }
+  
+  /* ========== common ========== */
+  /* se co nhung the khong an theo thuoc tinh chung */
+  input,
+  textarea,
+  select,
+  button {
+    font-family: inherit;
+    font-size: inherit;
+  }
+  .container {
+    margin: 0 100px;
+
+  }
+  a {
+    text-decoration: none;
+  }
+  .btn {
+    /* box chua */
+    display: inline-block;
+    min-width: 205px;
+    line-height: 60px;
+    border-radius: 30px;
+    background: var(--primary-color);
+  
+    /* text */
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+  }
+  .btn:hover {
+    /* Lam mo nen */
+    opacity: 0.9;
+  }
+  .section-heading {
+    color: var(--header-bg);
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1px;
+  }
+  .section-desc {
+    color: #575f66;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.67;
+  }
+
+  
+/* ========== header ========== */
+.menu{
+    height: 120px;
+    background: var(--header-bg);
+}
+.header {  
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.header__logo{
+    width: 249.552px;
+    height: 80px;
+
+}
+.header__title{
+    color: #FFF;
+    font-family: Sora;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+/* ========== body ========== */
+/* ========== select ========== */
+.select{
+   
+    margin: 50px 470px;
+    text-align: center;
+    
+}
+.select__content{
+    color: #000;
+    font-family: Poppins;
+    font-size: 25px;
+    font-weight: 500;
+}
+.select__dataset,
+.select__category{
+
+    height: 40px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.option{
+  width: 250px;
+  height: 40px;
+  border-radius: 52px;
+  background: #D9D9D9;
+}
+
+/* ========== set ========== */
+.set{
+    height: 750px;
+    display:flex;
+    justify-content: space-between;
+   
+}
+.set__heading{
+    margin-top: 10px;
+    text-align: center;
+    color: #106;
+    font-family: Poppins;
+    font-size: 45px;
+    font-weight: 600;
+}
+.set__des{
+    margin-top: 10px;
+    text-align: center;
+    color: #575F66;
+    font-family: Sora;
+    font-size: 30px;
+    font-weight: 300;
+}
+.box{
+    margin: 30px 0 30px;
+    padding: 10px;
+    width: 600px;
+    height: 600px;
+    border: 1px solid #106;
+    overflow: auto;
+    overscroll-behavior: contain;
+}
+.box::-webkit-scrollbar{
+    width: 10px;
+}
+.box::-webkit-scrollbar-track{
+    background: rgb(167, 167, 167);
+}
+.box::-webkit-scrollbar-thumb{
+    background: #106;
+}
+.box::-webkit-scrollbar-thumb:hover{
+    background: #106;
+}
+
+/* ========== set ========== */
+.find{
+    margin: 50px 0 100px;
+    text-align: center;
+}
+.find__btn{
+    
+    display: inline-block;
+    border-radius: 10px;
+    background: #106;
+    border-radius: 15px;
+  
+}
+.find__btn:hover{
+    cursor: pointer;
+    background: #FFF;
+    color: #106;
+}
+.find__heading{
+    padding: 20px;
+    text-align: center;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+/* ========== footer ========== */
+.footer{
+    height: 420px;
+    background: #106;
+}
+.footer__vision{
+    padding: 43px 0 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+/* ========== logo ========== */
+.vision__logo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+.vision__heading{
+    width: 267px;
+    height: 100px;
+    color: #21A9DE;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 50px;
+    font-weight: 800;
+}
+.vision__des{
+    
+    height: 40px;
+    margin-top: 10px;
+    color: #FFF;
+    text-align: center;
+    font-family: Sora;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+/* ========== avt ========== */
+.avt{
+    text-align: center;  
+}
+.shape__img{
+    border: 3px solid rgb(255, 255, 255);
+    border-radius: 999px;
+}
+.avt__heading{
+    margin-top: 15px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 30px;
+    font-weight: 600;
+}
+.avt__des{
+    margin-top: 10px;
+    color: #FFF;
+    font-family: Sora;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+/* ========== about ========== */
+.about{
+  margin: 0 70px 0;
+}
+.contact__heading,
+.social__heading{
+
+    height: 50px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 30px; /* 116.667% */
+}
+.contact__des{
+    height: 40px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+}
+.icon{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.image-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.image-grid img {
+    width: 84px;
+    height: 84px;
+    margin: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.image-grid img.selected {
+    border-color: blue;
+    padding: 3px;
+}
+
+.similar-image {
+    border-color: red;
+}
