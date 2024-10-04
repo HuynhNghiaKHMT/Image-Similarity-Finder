@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let selectedImage = '';
 
     // Fetch dataset list on page load
-    fetch('http://127.0.0.1:5000/api/datasets')
+    fetch('https://l85sgcpw-5000.asse.devtunnels.ms/api/datasets')
     .then(response => {
         if (!response.ok) {
             throw new Error('Network response was not ok');
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to load images based on selected dataset and category
     function loadImages() {
         if (selectedDataset && selectedCategory) {
-            fetch('http://127.0.0.1:5000/api/images', {
+            fetch('https://l85sgcpw-5000.asse.devtunnels.ms/api/images', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     if (Array.isArray(images) && images.length > 0) {
                         images.forEach(image => {
                             const imgElement = document.createElement('img');
-                            const imagePath = `http://127.0.0.1:5000/static/${selectedDataset}/seg_test/${selectedCategory}/${image}`;
+                            const imagePath = `https://l85sgcpw-5000.asse.devtunnels.ms/static/${selectedDataset}/seg_test/${selectedCategory}/${image}`;
                             imgElement.src = imagePath;
                             imgElement.alt = image;
                             imgElement.classList.add('selectable-image');
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Event listener for "Find Similar" button
     findSimilarButton.addEventListener('click', function () {
         if (selectedImage && selectedDataset && selectedCategory) {
-            fetch('http://127.0.0.1:5000/api/find_similar', {
+            fetch('https://l85sgcpw-5000.asse.devtunnels.ms/api/find_similar', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     similarImageContainer.innerHTML = ''; // Clear previous similar images
                     similarImages.forEach(image => {
                         const imgElement = document.createElement('img');
-                        imgElement.src = `http://127.0.0.1:5000/static/${selectedDataset}/seg/${selectedCategory}/${image[0]}`;
+                        imgElement.src = `https://l85sgcpw-5000.asse.devtunnels.ms/static/${selectedDataset}/seg/${selectedCategory}/${image[0]}`;
                         imgElement.alt = image[0];
                         imgElement.title = `Distance: ${image[1].toFixed(2)}`;
                         imgElement.classList.add('similar-image');
