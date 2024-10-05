@@ -12,32 +12,36 @@ BASE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'api',
 
 # Hàm tính histogram
 def calculate_histogram(image):
-    histogram = cv2.calcHist([image], [0], None, [256], [0, 256])
-    cv2.normalize(histogram, histogram)
-    return histogram
+    histograms = []
+    for i in range(3):  # Tính histogram cho từng kênh B, G, R
+        hist = cv2.calcHist([image], [i], None, [256], [0, 256])
+        cv2.normalize(hist, hist)
+        histograms.append(hist)
+    return histograms
 
 # Hàm tính khoảng cách Euclidean giữa 2 histogram
 def euclidean_distance(hist1, hist2):
-    return np.sqrt(np.sum((hist1 - hist2) ** 2))
+    distance = 0
+    for h1, h2 in zip(hist1, hist2):
+        distance += np.sqrt(np.sum((h1 - h2) ** 2))
+    return distance
 
 # Hàm tìm các ảnh tương tự
 def find_similar_images(input_image_path, folder_path):
     input_image = cv2.imread(input_image_path)
-    input_image_gray = cv2.cvtColor(input_image, cv2.COLOR_BGR2GRAY)
-    input_hist = calculate_histogram(input_image_gray)
+    input_image = cv2.cvtColor(input_image, cv2.COLOR_BGR2RGB)
+    # input_image_gray = cv2.cvtColor(input_image, cv2.COLOR_BGR2GRAY)
+    input_hist = calculate_histogram(input_image)
 
     distances = []
     for filename in os.listdir(folder_path):
         image_path = os.path.join(folder_path, filename)
-        test_image = cv2.imread(image_path)
+        test_image = cv2.imread(image_path) 
+        test_image =cv2.cvtColor(test_image, cv2.COLOR_BGR2RGB)
 
-        if test_image is None:
-            continue
-
-        test_image_gray = cv2.cvtColor(test_image, cv2.COLOR_BGR2GRAY)
-        test_hist = calculate_histogram(test_image_gray)
+        test_hist = calculate_histogram(test_image)
         distance = euclidean_distance(input_hist, test_hist)
-        distances.append((filename, distance))
+        distances.append((filename, distance,test_image))
 
     distances.sort(key=lambda x: x[1])
     return distances[:10]
