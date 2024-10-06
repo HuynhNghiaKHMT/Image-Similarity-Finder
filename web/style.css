@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   html {
     font-size: 62.5%;
@@ -26,7 +28,7 @@
     font-size: inherit;
   }
   .container {
-    margin: 0 100px;
+    margin: 0 8%;
 
   }
   a {
@@ -67,12 +69,13 @@
   
 /* ========== header ========== */
 .menu{
-    height: 120px;
     background: var(--header-bg);
 }
 .header {  
-    height: 120px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
+    gap: 50px;
     align-items: center;
     justify-content: space-between;
 
@@ -92,22 +95,22 @@
 /* ========== body ========== */
 /* ========== select ========== */
 .select{
-   
-    margin: 50px 470px;
-    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    width: 400px;
+    margin-left: 50%;
+    translate: -50% 0%;
     
 }
 .select__content{
     color: #000;
     font-family: Poppins;
-    font-size: 25px;
+    font-size: 20px;
     font-weight: 500;
 }
 .select__dataset,
 .select__category{
-
     height: 40px;
-    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -121,13 +124,14 @@
 
 /* ========== set ========== */
 .set{
-    height: 750px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display:flex;
+    gap: 20px;
     justify-content: space-between;
    
 }
 .set__heading{
-    margin-top: 10px;
     text-align: center;
     color: #106;
     font-family: Poppins;
@@ -143,10 +147,10 @@
     font-weight: 300;
 }
 .box{
-    margin: 30px 0 30px;
+    margin-top: 30px;
     padding: 10px;
     width: 600px;
-    height: 600px;
+    height: 600px; 
     border: 1px solid #106;
     overflow: auto;
     overscroll-behavior: contain;
@@ -166,11 +170,10 @@
 
 /* ========== set ========== */
 .find{
-    margin: 50px 0 100px;
+    padding: 20px 0 60px;
     text-align: center;
 }
 .find__btn{
-    
     display: inline-block;
     border-radius: 10px;
     background: #106;
@@ -183,7 +186,7 @@
     color: #106;
 }
 .find__heading{
-    padding: 20px;
+    padding: 10px;
     text-align: center;
     color: #FFF;
     font-family: Poppins;
@@ -193,27 +196,24 @@
 
 /* ========== footer ========== */
 .footer{
-    height: 420px;
     background: #106;
 }
 .footer__vision{
-    padding: 43px 0 ;
+    padding: 40px 0 ;
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 /* ========== logo ========== */
 .vision__logo{
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 7px;
 }
 .vision__heading{
     width: 267px;
-    height: 100px;
     color: #21A9DE;
     text-align: center;
     font-family: Poppins;
@@ -221,8 +221,6 @@
     font-weight: 800;
 }
 .vision__des{
-    
-    height: 40px;
     margin-top: 10px;
     color: #FFF;
     text-align: center;
@@ -260,8 +258,7 @@
 }
 .contact__heading,
 .social__heading{
-
-    height: 50px;
+    padding: 10px 0;
     color: #FFF;
     font-family: Poppins;
     font-size: 24px;
@@ -269,7 +266,7 @@
     line-height: 30px; /* 116.667% */
 }
 .contact__des{
-    height: 40px;
+    padding: 10px 0;
     color: #FFF;
     font-family: Poppins;
     font-size: 20px;
